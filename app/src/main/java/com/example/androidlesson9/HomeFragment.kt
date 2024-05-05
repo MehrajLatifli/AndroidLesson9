@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.example.androidlesson9.databinding.CustomDialogBinding
 import com.example.androidlesson9.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
 import com.shashank.sony.fancytoastlib.FancyToast
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class HomeFragment : Fragment() {
 
@@ -40,6 +43,7 @@ class HomeFragment : Fragment() {
 
         binding.button3.setOnClickListener {
             alertDialog(requireContext())
+            motionToast(requireContext())
         }
 
         binding.button4.setOnClickListener {
@@ -48,6 +52,7 @@ class HomeFragment : Fragment() {
 
         binding.button5.setOnClickListener {
             Snackbar(requireView())
+
         }
     }
 
@@ -78,6 +83,7 @@ class HomeFragment : Fragment() {
         }
 
         dialog.create().show()
+
     }
 
     private fun customAlertDialog(context: Context) {
@@ -94,6 +100,9 @@ class HomeFragment : Fragment() {
         dialogBinding.button1.setOnClickListener {
             dialog.dismiss()
         }
+
+
+        motionToast(context)
     }
 
     private fun Snackbar(view: View) {
@@ -103,5 +112,28 @@ class HomeFragment : Fragment() {
             toastMes(requireContext())
 
         }.show()
+
+
     }
+
+    private fun motionToast(context: Context) {
+        MotionToast.darkToast(
+            requireActivity(),
+            "Hurray success 😍",
+            "Upload Completed successfully!",
+            MotionToastStyle.INFO,
+            MotionToast.GRAVITY_BOTTOM,
+            MotionToast.LONG_DURATION,
+            ResourcesCompat.getFont(context, www.sanju.motiontoast.R.font.helveticabold))
+
+
+    }
+
+
+
+
+
+
+
+
 }

@@ -84,5 +84,5 @@ dependencies {
 
 
     implementation("io.github.shashank02051997:FancyToast:2.0.2")
- // implementation("com.github.Spikeysanju:MotionToast:1.4")
+    implementation("com.github.Spikeysanju:MotionToast:1.4")
 }
